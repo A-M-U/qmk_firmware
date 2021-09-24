@@ -31,21 +31,27 @@ enum custom_keycodes {
 #define KC_ADEN LT(_ADJUST, KC_END)
 #define KC_ADPU LT(_ADJUST, KC_PGUP)
 
-#define LGUI_A LGUI_T(DE_A)
-#define LALT_E LALT_T(DE_E)
-#define LSFT_D LSFT_T(DE_D)
+// left home row
+#define LCTL_ESC LCTL_T(KC_ESC)
+#define LSFT_A LSFT_T(DE_A)
+#define LNUM_S LT(_NUM, DE_S)
+#define LSYM_D LT(_SYMB, DE_D)
 #define LNAV_F LT(_NAV, DE_F)
-#define LCTL_S LCTL_T(DE_S)
-#define LSYM_G LT(_SYMB, DE_G)
-#define LNUM_R LT(_NUM, DE_R)
 
-#define RGUI_OE RGUI_T(DE_OE)
+// left first row
+#define LALT_E LALT_T(DE_E)
+#define LGUI_R LGUI_T(DE_R)
+
+// right first row
+#define RGUI_U RGUI_T(DE_U)
 #define LALT_I LALT_T(DE_I)
-#define RSFT_K RSFT_T(DE_K)
+
+// right home row
 #define RNAV_J LT(_NAV, DE_J)
-#define RCTL_L RCTL_T(DE_L)
-#define RSYM_H LT(_SYMB, DE_H)
-#define RNUM_U LT(_NUM, DE_U)
+#define RSYM_K LT(_SYMB, DE_K)
+#define RNUM_L LT(_NUM, DE_L)
+#define RSFT_OE RSFT_T(DE_OE)
+#define RCTL_AE RCTL_T(DE_AE)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -54,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
      KC_NAGR ,DE_1    ,DE_2    ,DE_3    ,DE_4    ,DE_5    ,                                            DE_6    ,DE_7    ,DE_8    ,DE_9    ,DE_0    ,KC_NAMI ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB  ,DE_Q    ,DE_W    ,LALT_E  ,LNUM_R  ,DE_T    ,SYM_L   ,                          SYM_L   ,DE_Z    ,RNUM_U  ,LALT_I  ,DE_O    ,DE_P    ,DE_UE   ,
+     KC_TAB  ,DE_Q    ,DE_W    ,LALT_E  ,LGUI_R  ,DE_T    ,SYM_L   ,                          SYM_L   ,DE_Z    ,RGUI_U  ,LALT_I  ,DE_O    ,DE_P    ,DE_UE   ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_ESC  ,LGUI_A  ,LCTL_S  ,LSFT_D  ,LNAV_F  ,LSYM_G  ,DE_ACUT ,                          DE_PLUS ,RSYM_H  ,RNAV_J  ,RSFT_K  ,RCTL_L  ,RGUI_OE ,DE_AE   ,
+     LCTL_ESC,LSFT_A  ,LNUM_S  ,LSYM_D  ,LNAV_F  ,DE_G    ,DE_ACUT ,                          DE_PLUS ,DE_H    ,RNAV_J  ,RSYM_K  ,RNUM_L  ,RSFT_OE ,RCTL_AE ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT ,DE_Y    ,DE_X    ,DE_C    ,DE_V    ,DE_B    ,KC_ADPU ,KC_PGDN ,        KC_HOME ,KC_ADEN ,DE_N    ,DE_M    ,DE_COMM ,DE_DOT  ,DE_MINS ,KC_RSFT ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
